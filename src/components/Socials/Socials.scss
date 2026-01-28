@@ -1,0 +1,29 @@
+.soc1als {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	&__link {
+		@include flex-center;
+		@include media(width, 52px, 40px, 60px);
+		aspect-ratio: 1;
+
+		border-radius: 50%;
+
+		background-color: var(--color-gray-08);
+		color: var(--color-white);
+
+		@include hover {
+			background-color: var(--color-purple-60);
+			color: var(--color-white);
+		}
+	}
+	
+	&__icon {
+		@include mobile {
+			--_icon-size: 20px
+		}
+	}
+}

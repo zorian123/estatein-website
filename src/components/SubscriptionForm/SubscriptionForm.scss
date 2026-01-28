@@ -1,0 +1,52 @@
+.subscription-form {
+	position: relative;
+
+	height: 66px;
+	width: 100%;
+
+	&__label {
+		@include visually-hidden;
+	}
+
+	&__input {
+		position: absolute;
+		inset: 0;
+
+		padding-block: 21px;
+		padding-inline: 58px 64px;
+
+		border: none;
+		border-radius: 12px;
+		border: var(--border);
+		
+		color: var(--color-white);
+		background-color: transparent;
+		background: url('/src/assets/icons/email.svg') 26px center/24px 24px no-repeat;
+
+		&::placeholder {
+			color: var(--color-gray-60);
+		}
+	}
+
+	&__button {
+		@include square(48px);
+		@include flex-center;
+		@include abs-center-y;
+		right: 10px;
+
+		border-radius: 100%;
+		border: none;
+
+		color: var(--color-white);
+		background-color: transparent;
+
+		@include hover {
+			background-color: var(--color-purple-65);
+			scale: 1.05;
+		}
+
+		.icon {
+			--_icon-size: #{fluid-to-laptop(30, 24)};
+		}
+	}
+}

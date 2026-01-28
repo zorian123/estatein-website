@@ -1,0 +1,35 @@
+.explore-banner {
+	@include media(padding-block, 100px, 60px, 50px);
+
+	background: url('@/assets/images/ExploreBanner/background.png') bottom/contain no-repeat;
+	border-block: var(--border);
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 50px;
+
+		@include mobile {
+			flex-direction: column;
+			row-gap: 30px;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		@include media(row-gap, 14px, 10px, 6px);
+
+		max-width: 1154px;
+	}
+
+	&__button {
+		flex-shrink: 0;
+		max-width: 300px;
+		
+		@include mobile {
+			width: 100%;
+		}
+	}
+}
