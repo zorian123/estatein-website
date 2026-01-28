@@ -1,0 +1,5 @@
+.icon {
+	@include media(--_icon-size, 28px, 20px);
+	@include square(var(--_icon-size));
+	display: inline-flex;
+}
