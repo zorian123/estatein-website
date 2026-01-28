@@ -15,13 +15,13 @@ export default ({ url }) => {
 	]
 
 	return (
-		<header className="header">
-			<div className="header__promo">
+		<header className="header" data-js-header="">
+			<div className="header__promo" data-js-header-promo="">
 				<div className="header__promo-inner container">
 					<p className="header__promo-text">✨Discover Your Dream Property with Estatein</p>
 					<a href="#">Learn More</a>
 
-					<button className="header__promo-close-button" type="button" title="Close" aria-label="Close">
+					<button className="header__promo-close-button" type="button" title="Close" aria-label="Close" data-js-header-promo-close-button="">
 						<Icon name="cross" />
 					</button>
 				</div>
@@ -31,7 +31,7 @@ export default ({ url }) => {
 				<div className="header__body-inner container">
 					<Logo className="header__logo" />
 
-					<dialog className="header__overlay">
+					<dialog className="header__overlay" data-js-header-dialog="">
 						<nav className="header__menu">
 							<ul className="header__menu-list">
 								{links.map(({ label, href }, i) => (
@@ -50,7 +50,12 @@ export default ({ url }) => {
 						/>
 					</dialog>
 
-					<BurgerButton className="header__burger-button visible-mobile" />
+					<BurgerButton
+						className="header__burger-button visible-mobile"
+						extraAttrs={{
+							'data-js-header-burger-button': '',
+						}}	
+					/>
 				</div>
 			</div>
 		</header>
