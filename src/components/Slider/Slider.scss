@@ -1,0 +1,89 @@
+.slider {
+	display: grid;
+	@include media(row-gap, 50px, 40px, 30px);
+
+
+
+	&__list {
+		width: 10000%; // drag by margin (the gap between slides)
+	}
+
+	&__item {
+		height: auto;
+	}
+
+	&__swiper {
+		overflow: clip;
+		overflow-clip-margin: 10px; // some border hack
+	}
+
+
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		border-top: var(--border);
+		@include media(padding-top, 20px, 16px);
+
+		// Hide footer if all buttons are disabled
+		&:has([disabled] ~ [disabled]) {
+			display: none;
+		}
+
+		// For 'Our Valued Clients' section (2nd page)
+		&:not(:has(.slider__actions)) {
+			.slider__navigation {
+				@include mobile {
+					width: 100%;
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+
+	&__pagination {
+		&-current {
+			color: var(--color-white);
+			font-weight: 900;
+		}
+	}
+
+	&__navigation {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__button {
+		@include flex-center;
+		@include square(var(--_size));
+		@include media(--_size, 58px, 44px);
+
+		border: var(--border);
+		border-radius: 50%;
+
+		background-color: var(--color-gray-10);
+		color: var(--color-white);
+
+		& .icon {
+			@include media(--_icon-size, 30px, 24px);
+		}
+
+		&[disabled] {
+			background-color: var(--color-gray-08);
+			color: var(--color-gray-50);
+			cursor: not-allowed;
+		}
+
+		&:not([disabled]) {
+			@include hover {
+				scale: 1.05;
+
+				background-color: var(--color-purple-60);
+				border-color: var(--color-purple-60);
+			}
+		}
+	}
+}
