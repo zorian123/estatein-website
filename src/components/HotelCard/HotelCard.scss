@@ -1,0 +1,32 @@
+.hotel-card {
+	display: grid;
+	@include media(row-gap, 30px, 20px, 16px);
+
+	height: 100%;
+	@include media(padding, 40px, 30px, 24px);
+
+	border: var(--border);
+	border-radius: 12px;
+
+	&__image {
+		object-fit: cover;
+		width: 100%;
+		border-radius: 12px;
+	}
+
+	&__info {
+		display: grid;
+		row-gap: 6px;
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__price {
+		display: grid;
+		row-gap: 2px;
+	}
+}
