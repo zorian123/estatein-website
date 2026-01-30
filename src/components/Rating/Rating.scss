@@ -1,0 +1,24 @@
+.rating {
+	&__list {
+		display: flex;
+		@include media(column-gap, 10px, 8px);
+	}
+
+	&__item {
+		--_size: 44px;
+		@include media(--_size, 44px, 36px, 30px);
+
+		@include flex-center;
+		@include square(var(--_size));
+
+		border: var(--border);
+		border-radius: 50%;
+
+		color: var(--color-gray-30);
+		background-color: var(--color-gray-10);
+
+		&.is-active {
+			color: #FFE500;
+		}
+	}
+}
