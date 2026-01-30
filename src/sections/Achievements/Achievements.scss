@@ -1,0 +1,20 @@
+.achievements {
+	display: flex;
+	@include media(gap, 40px, 30px, 20px);
+	flex-wrap: wrap;
+	
+	&__cell {
+		flex: 1 1 300px;
+
+		display: grid;
+		@include media(row-gap, 30px, 24px, 16px);
+
+		@include media(padding, 50px, 40px, 30px);
+
+		border-radius: 12px;
+		border: var(--border);
+
+		outline: 10px solid var(--color-gray-10);
+		@include media(outline-width, 10px, 8px, 6px);
+	}
+}
