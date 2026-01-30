@@ -1,0 +1,15 @@
+.faq-card {
+	height: 100%;
+
+	display: grid;
+	grid-template-rows: 1fr;
+
+	@include media(row-gap, 30px, 24px, 20px);
+	@include mobile-above {
+		justify-items: start;
+	}
+
+	border: var(--border);
+	@include media(padding, 50px, 40px, 30px);
+	@include media(border-radius, 12px, 10px);
+}
