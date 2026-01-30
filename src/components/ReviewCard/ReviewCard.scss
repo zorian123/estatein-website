@@ -1,0 +1,15 @@
+.review-card {
+	display: grid;
+	@include media(row-gap, 40px, 30px, 24px);
+	height: 100%;
+
+	border: var(--border);
+	@include media(border-radius, 12px, 10px);
+
+	@include media(padding, 50px, 40px, 30px);
+
+	&__body {
+		display: grid;
+		@include media(row-gap, 14px, 10px, 6px);
+	}
+}
