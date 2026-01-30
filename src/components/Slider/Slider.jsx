@@ -1,5 +1,5 @@
-import './Slider.scss'
 import 'swiper/css'
+import './Slider.scss'
 
 import Icon from '../Icon'
 import clsx from 'clsx'
