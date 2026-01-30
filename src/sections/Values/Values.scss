@@ -1,0 +1,67 @@
+.values {
+	--_border-padding: 30px;
+	@include media(--_border-padding, 30px, 24px, 20px);
+
+	@include media(padding, 60px, 50px, 24px);
+
+	border-radius: 12px;
+	border: var(--border);
+	outline: 10px solid var(--color-gray-10);
+	@include media(outline-width, 10px, 8px, 6px);
+
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		@include mobile {
+			display: contents;
+		}
+		
+		@include mobile-above {
+			&:first-child {
+				padding-bottom: var(--_border-padding);
+				margin-bottom: var(--_border-padding);
+				border-bottom: var(--border);
+			}
+		}
+
+		// Remove 'horizontal line' of the last element
+		&:last-child > :last-child {
+			padding-bottom: auto;
+			margin-bottom: auto;
+			border-bottom: none;
+		}
+	}
+
+	&__cell {
+		@include mobile-above {
+			&:first-child {
+				padding-right: var(--_border-padding);
+				border-right: var(--border);
+			}
+			&:last-child {
+				padding-left: var(--_border-padding);
+			}
+		}
+
+		// 'Horizontal line'
+		@include mobile {
+			padding-bottom: var(--_border-padding);
+			margin-bottom: var(--_border-padding);
+			border-bottom: var(--border);
+		}
+
+		display: grid;
+		@include media(row-gap, 20px, 16px, 14px);
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		@include media(column-gap, 14px, 10px, 8px);
+	}
+
+	&__image {
+		@include media(width, 74px, 60px, 52px);
+	}
+}

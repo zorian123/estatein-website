@@ -1,0 +1,126 @@
+.team {
+	&__list {
+		display: grid;
+		@include media(gap, 30px, 20px);
+
+		@include media(--_columns, 4, 2, 1);
+		grid-template-columns: repeat(var(--_columns), 1fr);
+
+		@include laptop {
+			max-width: 800px;
+			margin-inline: auto;
+		}
+		@include mobile {
+			max-width: 400px;
+			margin-inline: auto;
+		}
+	}
+
+	&__item {
+		display: grid;
+		@include media(row-gap, 24px, 32px, 22px);
+
+		border: var(--border);
+		border-radius: 12px;
+		@include media(padding, 30px, 24px, 20px);
+	}
+
+
+
+
+	&__image {
+		display: grid;
+		justify-items: center;
+	}
+
+	&__img {
+		border-radius: 12px;
+		object-view-box: inset(2px); // hack for white border >:(
+	}
+
+	&__link {
+		@include flex-center;
+
+		@include media(width, 76px, 60px);
+		@include media(height, 52px, 40px);
+		@include media(margin-top, -26px, -20px);
+
+		border-radius: 50px;
+		color: var(--color-white);
+		background-color: var(--color-purple-60);
+
+		@include hover {
+			scale: 1.05;
+			opacity: 0.8;
+			color: var(--color-white);
+		}
+	}
+
+
+
+
+	&__body {
+		display: grid;
+		@include media(row-gap, 24px, 20px, 16px);
+		justify-items: center;
+	}
+
+	&__info {
+		display: grid;
+		@include media(row-gap, 6px, 4px, 2px);
+		justify-items: center;
+	}
+
+	&__post {
+		font-weight: 400;
+	}
+
+
+
+
+	&__form {
+		display: flex;
+		align-items: center;
+
+		width: 100%;
+		position: relative;
+		@include media(height, 72px, 56px, 64px);
+
+		label {
+			@include visually-hidden;
+		}
+		
+		input {
+			position: absolute;
+			inset: 0;
+
+			@include media(padding-inline, 24px 64px, 20px 50px, 24px 60px);
+
+			border: var(--border);
+			border-radius: 999px;
+			background-color: var(--color-gray-10);
+			color: var(--color-white);
+		}
+
+		button {
+			@include media(--_size, 44px, 36px, 48px);
+			@include square(var(--_size));
+			@include flex-center;
+
+			position: absolute;
+			@include media(right, 14px, 10px, 8px);
+
+			border: none;
+			border-radius: 50%;
+
+			background-color: var(--color-purple-60);
+			color: var(--color-white);
+
+			@include hover {
+				scale: 1.05;
+				opacity: 0.8;
+				color: var(--color-white);
+			}
+		}
+	}
+}

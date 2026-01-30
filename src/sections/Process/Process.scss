@@ -1,0 +1,54 @@
+.process {
+	&__list {
+		counter-reset: card;
+		
+		display: grid;
+		@include media(column-gap, 30px, 20px, 20px);
+		@include media(row-gap, 50px, 40px, 30px);
+
+		@include media(--_columns, 3, 2, 1);
+		grid-template-columns: repeat(var(--_columns), 1fr);
+
+		list-style: none;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		
+		&::before {
+			counter-increment: card;
+
+			// For screenreader
+			content: 'Step ' counter(card, decimal-leading-zero) / 'Step ' counter(card);
+			@include media(padding-inline, 20px, 16px);
+			@include media(padding-block, 16px, 14px);
+
+			display: block;
+			border-left: 1px solid var(--color-purple-60);
+
+			@include media(font-size, 20px, 16px);
+			color: var(--color-white);
+		}
+	}
+
+	&__body {
+		flex: 1;
+
+		display: grid;
+		@include media(row-gap, 20px, 16px, 14px);
+		@include media(padding, 50px, 40px, 30px);
+
+		border-radius: 0 12px 12px;
+		border: 1px solid transparent;
+
+		--_clr-background-1: color-mix(in srgb, var(--color-purple-60) 20%, var(--color-body));
+
+		background-image:
+			linear-gradient(140deg, var(--_clr-background-1), var(--color-body) 14%), // background
+			linear-gradient(140deg, var(--color-purple-60), var(--color-gray-15) 20%); // border
+
+		background-clip: padding-box, border-box;
+		background-origin: border-box;
+	}
+}

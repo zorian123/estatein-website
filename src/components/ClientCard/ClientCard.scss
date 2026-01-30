@@ -1,0 +1,98 @@
+.client-card {
+	height: 100%;
+
+	display: grid;
+	@include media(row-gap, 40px, 30px);
+	@include media(padding, 50px, 40px, 24);
+
+	border: var(--border);
+	outline: 8px solid var(--color-gray-10);
+	@include media(outline-width, 8px, 8px, 6px);
+
+	@include media(border-radius, 12px, 10px);
+
+
+
+
+
+	&__header {
+		display: grid;
+		gap: 10px;
+
+		@include tablet-above {
+			grid:
+				"since  link"
+				"name   link"
+				/1fr    auto;
+		}
+	}
+
+	&__since {
+		@include tablet-above {
+			grid-area: since;
+		}
+	}
+
+	&__name {
+		@include tablet-above {
+			grid-area: name;
+		}
+		@include media(font-size, 30px, 24px, 20px);
+	}
+
+	&__link {
+		@include tablet-above {
+			grid-area: link;
+		}
+		align-self: center;
+	}
+
+
+
+
+	&__details {
+		display: flex;
+
+		&-item {
+			flex: 1;
+
+			display: grid;
+			@include media(row-gap, 8px, 6px, 4px);
+
+			&:first-child {
+				border-right: var(--border);
+				padding-right: 30px;
+				margin-right: 30px;
+			}
+		}
+
+		&-key {
+			display: flex;
+			align-items: center;
+			column-gap: 6px;
+
+			color: var(--color-gray-60);
+		}
+
+		&-value {
+			color: var(--color-white);
+		}
+	}
+
+
+
+
+	&__review {
+		display: grid;
+		@include media(row-gap, 14px, 10px, 8px);
+
+		@include media(padding, 30px, 24px, 20px);
+
+		border: var(--border);
+		border-radius: 12px;
+
+		&-description {
+			color: var(--color-white);
+		}
+	}
+}
